@@ -6,15 +6,15 @@ if (!function_exists('getContentByType')) {
      *
      * @param string $type
      *
-     * @return bool|\Modules\Content\Content
+     * @return bool|\GeekCms\Content\Content
      */
     function getContentByType(string $type)
     {
         $type = ucfirst($type);
-        $class = "\\Modules\\Content\\Contents\\{$type}";
+        $class = "\\GeekCms\\Content\\Contents\\{$type}";
 
         if (class_exists($class)) {
-            // @var \Modules\Content\Content $content
+            // @var \GeekCms\Content\Content $content
             return new $class();
         }
 

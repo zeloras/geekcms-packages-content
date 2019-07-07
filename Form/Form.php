@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\Content\Form;
+namespace GeekCms\Content\Form;
 
 use Illuminate\Database\Eloquent\Model;
-use Modules\Content\Content;
+use GeekCms\Content\Content;
 
 class Form
 {
@@ -44,7 +44,7 @@ class Form
     {
         $name = ucfirst($type);
 
-        if (!class_exists($class = "Modules\\Content\\Form\\{$name}")) {
+        if (!class_exists($class = "GeekCms\\Content\\Form\\{$name}")) {
             throw new \ErrorException('Class not found', 2379);
         }
 

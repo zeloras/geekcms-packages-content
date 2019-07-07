@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Content\Contents;
+namespace GeekCms\Content\Contents;
 
 use Field;
-use Modules\Content\Content;
-use Modules\Content\Models\ContentModel;
+use GeekCms\Content\Content;
+use GeekCms\Content\Models\ContentModel;
 
 class Excursion extends Content
 {

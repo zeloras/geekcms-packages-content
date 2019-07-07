@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Content\Form;
+namespace GeekCms\Content\Form;
 
 use Field as ContentField;
 

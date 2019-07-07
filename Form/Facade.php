@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Content\Form;
+namespace GeekCms\Content\Form;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {

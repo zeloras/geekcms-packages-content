@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\Content\Http\Controllers;
+namespace GeekCms\Content\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Modules\Content\Models\ContentModel;
+use GeekCms\Content\Models\ContentModel;
 
 class AdminController extends Controller
 {

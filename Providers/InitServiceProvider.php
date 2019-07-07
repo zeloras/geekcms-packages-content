@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Content\Providers;
+namespace GeekCms\Content\Providers;
 
 use GeekCms\PackagesManager\Support\ServiceProvider as MainServiceProvider;
 

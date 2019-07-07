@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Content;
+namespace GeekCms\Content;
 
 class Content
 {
-    public static $contentModel = \Modules\Content\Models\ContentModel::class;
+    public static $contentModel = \GeekCms\Content\Models\ContentModel::class;
 
     public static $viewList = 'content::index';
 
@@ -67,7 +67,7 @@ class Content
     }
 
     /**
-     * @return \Modules\Content\Models\ContentModel
+     * @return \GeekCms\Content\Models\ContentModel
      */
     public function getModel()
     {
