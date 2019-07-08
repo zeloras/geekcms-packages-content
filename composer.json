@@ -34,5 +34,7 @@
         "psr-4": {
             "GeekCms\\Content\\": ""
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
