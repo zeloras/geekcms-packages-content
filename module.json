@@ -1,24 +1,24 @@
 {
-    "name": "Content",
-    "alias": "content",
-    "description": "",
-    "keywords": [],
-    "active": 1,
-    "order": 1,
-    "providers": [
-        "GeekCms\\Content\\Providers\\InitServiceProvider"
-    ],
-    "aliases": {},
-    "files": [
-        "loader.php"
-    ],
-    "requires": [
-        "GeekCms\\PackagesManager"
-    ],
-    "access_permissions": [
-        {
-            "name": "modules_content_admin_list",
-            "i18n_name": "access.modules_content_admin_list"
-        }
-    ]
+  "name": "Content",
+  "alias": "content",
+  "description": "",
+  "keywords": [],
+  "active": 1,
+  "order": 1,
+  "providers": [
+    "GeekCms\\Content\\Providers\\InitServiceProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "loader.php"
+  ],
+  "requires": [
+    "GeekCms\\PackagesManager"
+  ],
+  "access_permissions": [
+    {
+      "name": "modules_content_admin_list",
+      "i18n_name": "access.modules_content_admin_list"
+    }
+  ]
 }

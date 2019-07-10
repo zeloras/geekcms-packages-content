@@ -2,8 +2,8 @@
 
 namespace GeekCms\Content\Http\Controllers;
 
-use Illuminate\Routing\Controller;
 use GeekCms\Content\Models\ContentModel;
+use Illuminate\Routing\Controller;
 
 class AdminController extends Controller
 {
@@ -16,7 +16,7 @@ class AdminController extends Controller
             ]);
         }
 
-        abort(404);
+        return abort(404);
     }
 
     public function edit($type, $item)
@@ -24,8 +24,7 @@ class AdminController extends Controller
         if ($content = getContentByType($type)) {
             $item = ContentModel::where('type', $type)
                 ->where('id', $item)
-                ->first()
-            ;
+                ->first();
 
             $form = $content->form($item);
 
@@ -36,6 +35,6 @@ class AdminController extends Controller
             }
         }
 
-        abort(404);
+        return abort(404);
     }
 }

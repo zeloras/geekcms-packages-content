@@ -1,12 +1,14 @@
 <?php
 
+use GeekCms\Content\Content;
+
 if (!function_exists('getContentByType')) {
     /**
      * Get content instance by type.
      *
      * @param string $type
      *
-     * @return bool|\GeekCms\Content\Content
+     * @return bool|Content
      */
     function getContentByType(string $type)
     {

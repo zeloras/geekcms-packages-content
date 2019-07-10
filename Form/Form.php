@@ -2,8 +2,9 @@
 
 namespace GeekCms\Content\Form;
 
-use Illuminate\Database\Eloquent\Model;
+use ErrorException;
 use GeekCms\Content\Content;
+use Illuminate\Database\Eloquent\Model;
 
 class Form
 {
@@ -21,11 +22,6 @@ class Form
         $this->setModel($model);
     }
 
-    public function setModel(Model $model)
-    {
-        $this->model = $model;
-    }
-
     public function setContent(Content $content)
     {
         $this->content = $content;
@@ -40,12 +36,17 @@ class Form
         return $this->model;
     }
 
+    public function setModel(Model $model)
+    {
+        $this->model = $model;
+    }
+
     public function create($type, string $attrName, $options = [])
     {
         $name = ucfirst($type);
 
         if (!class_exists($class = "GeekCms\\Content\\Form\\{$name}")) {
-            throw new \ErrorException('Class not found', 2379);
+            throw new ErrorException('Class not found', 2379);
         }
 
         $instance = (new $class())->setName($attrName);

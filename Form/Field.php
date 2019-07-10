@@ -3,6 +3,7 @@
 namespace GeekCms\Content\Form;
 
 use Field as ContentField;
+use Throwable;
 
 class Field
 {
@@ -27,33 +28,6 @@ class Field
     protected $errors;
 
     protected $attributes;
-
-    /**
-     * Getters.
-     *
-     * @param $property
-     */
-    public function __get($property)
-    {
-        if (property_exists($this, $property)) {
-            return $this->{$property};
-        }
-
-        return null;
-    }
-
-    /**
-     * Setters.
-     *
-     * @param $property
-     * @param $value
-     */
-    public function __set($property, $value)
-    {
-        if (property_exists($this, $property)) {
-            $this->{$property} = $value;
-        }
-    }
 
     /**
      * Getters & setters.
@@ -84,18 +58,62 @@ class Field
                 return $this->__get($property);
             }
         }
+
+        return null;
+    }
+
+    /**
+     * Getters.
+     *
+     * @param $property
+     * @return |null |null
+     */
+    public function __get($property)
+    {
+        if (property_exists($this, $property)) {
+            return $this->{$property};
+        }
+
+        return null;
+    }
+
+    /**
+     * Setters.
+     *
+     * @param $property
+     * @param $value
+     */
+    public function __set($property, $value)
+    {
+        if (property_exists($this, $property)) {
+            $this->{$property} = $value;
+        }
     }
 
     /**
      * Convert object to string with use render method.
      *
-     * @throws \Throwable
-     *
      * @return string
+     * @throws Throwable
+     *
      */
     public function __toString()
     {
         return $this->render();
+    }
+
+    /**
+     * Render field.
+     *
+     * @return string
+     * @throws Throwable
+     *
+     */
+    public function render()
+    {
+        return view($this->getView(), [
+            'field' => $this,
+        ])->render();
     }
 
     public function getValue()
@@ -118,7 +136,7 @@ class Field
     {
         if (null === $this->id) {
             if (null === $this->name) {
-                $this->setId('field'.substr(md5(time()), 0, 6));
+                $this->setId('field' . substr(md5(time()), 0, 6));
             }
 
             if (null !== $this->name) {
@@ -127,19 +145,5 @@ class Field
         }
 
         return $this->id;
-    }
-
-    /**
-     * Render field.
-     *
-     * @throws \Throwable
-     *
-     * @return string
-     */
-    public function render()
-    {
-        return view($this->getView(), [
-            'field' => $this,
-        ])->render();
     }
 }
