@@ -35,7 +35,7 @@
   },
   "autoload": {
     "psr-4": {
-      "GeekCms\\Content\\": ""
+      "GeekCms\\Content\\": "src/"
     }
   },
   "minimum-stability": "dev",
