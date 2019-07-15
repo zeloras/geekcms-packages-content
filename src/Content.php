@@ -119,7 +119,7 @@ class Content
         foreach ($this->columns as $key => $column) {
             $item = (method_exists($this, $column)) ? $key : $column;
 
-            // $itemTrans = static::\Translate::get("rows.{$item}");
+            // $itemTrans = \Translate::get("rows.{$item}");
 
             $columns[] = $item;
         }
